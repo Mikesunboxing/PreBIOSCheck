@@ -6,6 +6,10 @@
 # Pre-BIOS Check Utility v3.2
 Built by **Mike's Unboxing**
 
+![Version](https://img.shields.io/badge/version-3.2-cyan)
+![License](https://img.shields.io/badge/license-Non--Commercial-orange)
+![Platform](https://img.shields.io/badge/platform-Windows-blue)
+
 ## 🛑 Usage Restrictions
 This tool is **FREE** for non profit use in the community. If you paid for this software, you have been scammed. 
 **Commercial redistribution or resale of this utility is strictly prohibited.**
