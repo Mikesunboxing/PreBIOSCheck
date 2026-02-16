@@ -1,3 +1,8 @@
+<p align="center">
+  <img src="MUL logo.ico" width="150" title="Mike's Unboxing Logo">
+</p>
+
+# Mike's Unboxing Pre-BIOS Check Utility
 # Pre-BIOS Check Utility v3.2
 Built by **Mike's Unboxing**
 
