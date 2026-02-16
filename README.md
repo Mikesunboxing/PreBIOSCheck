@@ -1,6 +1,10 @@
 # Pre-BIOS Check Utility v3.2
 Built by **Mike's Unboxing**
 
+## 🛑 Usage Restrictions
+This tool is **FREE** for non profit use in the community. If you paid for this software, you have been scammed. 
+**Commercial redistribution or resale of this utility is strictly prohibited.**
+
 ## What this tool does:
 - Checks for **MBR vs GPT** partition styles (Crucial for UEFI updates).
 - Detects Motherboard model and current BIOS Version and Date (to avoid errors from big jumps in versions)
