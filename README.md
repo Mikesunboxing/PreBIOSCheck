@@ -12,3 +12,19 @@ Built by **Mike's Unboxing**
 1. Download `PreBIOSCheck.exe` from the [Releases](link-to-your-release) page.
 2. Right-click the file and select **Run as Administrator**.
 3. If Windows SmartScreen appears, click **More Info** -> **Run Anyway**.
+
+---
+
+## ⚠️ Disclaimer & Terms of Use
+
+**Please read carefully before using this utility.**
+
+While this tool is designed to assist you in preparing for a BIOS update, it is provided "as-is" without any warranties. 
+
+* **Due Diligence:** Do not entirely rely on the information provided by this utility. Always cross-reference with your motherboard manufacturer's official documentation.
+* **At Your Own Risk:** Any BIOS updates you perform are at your own risk. Flashing a BIOS is a sensitive procedure; if interrupted (due to power loss, hardware failure, or software issues), it can lead to a "bricked" motherboard.
+* **No Liability:** Mike's Unboxing and its community members are in no way responsible for any hardware failure, data loss, or software issues that may occur during or after the BIOS update process.
+
+By downloading and running this tool, you acknowledge that you understand these risks.
+
+---
