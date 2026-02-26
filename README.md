@@ -2,42 +2,31 @@
   <img src="MUL logo.ico" width="150" title="Mike's Unboxing Logo">
 </p>
 
-# Mike's Unboxing Pre-BIOS Check Utility v3.2
-**Ensure your system is ready for a BIOS update with one click.**
+# Mike's Unboxing Pre-BIOS Check Utility v4.5.8.4
+**Comprehensive hardware, security, and power audit for safer BIOS updates.**
 
-[![Version](https://img.shields.io/badge/version-3.2-cyan)](https://github.com/YourUsername/PreBIOSCheck/releases)
+[![Version](https://img.shields.io/badge/version-4.5.8.4-cyan)](https://github.com/YourUsername/PreBIOSCheck/releases)
 [![License](https://img.shields.io/badge/license-Non--Commercial-orange)](#-disclaimer--terms-of-use)
 [![Platform](https://img.shields.io/badge/platform-Windows-blue)](https://github.com/YourUsername/PreBIOSCheck)
 
 ---
 
 ## 🚀 Key Features
+- **Universal BIOS Date Fix:** Enhanced Regex-based scraping for accurate date detection on **Z890**, **X870**, and **Core Ultra** platforms.
 - **Partition Style Check:** Instantly identifies if you are on **MBR** or **GPT**.
 - **CSM Warning System:** Alerts you if a BIOS flash might hide your MBR drives.
-- **BitLocker Detection:** Reminds you to suspend encryption to prevent lockouts.
-- **Power Analysis:** Safety check for battery levels (requires >50% for laptops).
-- **Windows Update Monitor:** Detects pending reboots that could interfere with flashing.
-- **Motherboard & BIOS Intel:** Pulls your exact model and current BIOS date.
+- **BitLocker Detection:** Critical reminders to manage encryption to prevent recovery key lockouts.
+- **Power Analysis:** Integrated safety check for laptop battery levels and AC source.
+- **UEFI CA 2023 Analysis:** Checks your system's readiness for Microsoft's new Secure Boot certificate rollout.
+- **Windows Update Monitor:** Detects pending reboots to ensure a clean environment for flashing.
 
 ---
 
-## 📥 How to Install & Run
-1. Go to the **[Releases](https://github.com/YourUsername/PreBIOSCheck/releases/tag/v3.2)** page.
-2. Download `PreBIOSCheck.exe`.
-3. **Right-click** the file and select **"Run as Administrator"**.
-4. If Windows SmartScreen appears:
-   - Click **"More Info"**
-   - Click **"Run Anyway"**
+## 📥 How to Run (Recommended)
+We no longer require you to download and unblock `.exe` or `.ps1` files. You can now run the utility directly via a **PowerShell Stub**.
 
----
+1. Right-click the **Windows Start Button** and select **Terminal (Admin)** or **PowerShell (Admin)**.
+2. Copy the command below and paste it into the window:
 
-## 🛑 Usage Restrictions
-This tool is **FREE** for the community. If you paid for this software, you have been scammed. 
-**Commercial redistribution or resale of this utility is strictly prohibited.**
-
----
-
-## ⚠️ Disclaimer & Terms of Use
-**Do not entirely rely on this information.** Always perform your own due diligence. Mike's Unboxing and Community are here to help, but any BIOS updates are performed at **YOUR OWN RISK**. We are in no way responsible for any issues, "bricks," or data loss that may occur during the process.
-
----
+```powershell
+Set-ExecutionPolicy Bypass -Scope Process -Force; iex ((New-Object System.Net.WebClient).DownloadString('[https://raw.githubusercontent.com/YOUR_GITHUB_USER/YOUR_REPO/main/PreBIOSCheck.ps1](https://raw.githubusercontent.com/YOUR_GITHUB_USER/YOUR_REPO/main/PreBIOSCheck.ps1)'))
