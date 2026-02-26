@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="MUL logo.ico" width="150" title="Mike's Unboxing Logo">
+  <img src="logo.ico" width="150" title="Mike's Unboxing Logo">
 </p>
 
 # Mike's Unboxing Pre-BIOS Check Utility v4.5.8.4
