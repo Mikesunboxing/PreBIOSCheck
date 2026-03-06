@@ -2,51 +2,51 @@
   <img src="logo.ico" width="150" title="Mike's Unboxing Logo">
 </p>
 
-# Mike's Unboxing Pre-BIOS Check Utility v4.5.8.5
-**Ensure your system is ready for a BIOS update with one click.**
+# Mike's Unboxing Pre-BIOS Check Utility v4.5.8.7
+**Comprehensive hardware audit and UEFI safety tool for BIOS updates.**
 
-[![Version](https://img.shields.io/badge/version-4.5.8.5-cyan)](https://github.com/YourUsername/PreBIOSCheck/releases)
+[![Version](https://img.shields.io/badge/version-4.5.8.7-cyan)](https://github.com/YourUsername/PreBIOSCheck/releases)
 [![License](https://img.shields.io/badge/license-Non--Commercial-orange)](#-disclaimer--terms-of-use)
 [![Platform](https://img.shields.io/badge/platform-Windows-blue)](https://github.com/YourUsername/PreBIOSCheck)
 
 ---
 
 ## 🚀 Key Features
-- **Universal BIOS Date Fix:** Enhanced Regex-based scraping and intelligent string handling to prevent "Format Errors" on Z890 boards and truncation on Dell platforms.
-- **Partition Style Check:** Instantly identifies if you are on **MBR** or **GPT**.
-- **CSM Warning System:** Alerts you if a BIOS flash might hide your MBR drives.
-- **BitLocker Detection:** Reminds you to suspend encryption to prevent recovery key lockouts.
-- **Power Analysis:** Safety check for battery levels and AC source (required for laptops).
-- **Windows Update Monitor:** Detects pending reboots that could interfere with the flashing process.
-- **UEFI CA 2023 Analysis:** Checks readiness for Microsoft’s new Secure Boot certificate rollout.
+- **Universal BIOS Date Fix:** Intelligent scraping engine for **Z890**, **X870**, and **Core Ultra** platforms.
+- **OEM String Recovery:** Fixed truncation issues on **Dell** and other OEM systems (e.g., "2024" no longer appears as "202").
+- **UEFI CA 2023 Remediation:** **[NEW]** Detects if Windows is blocking the new 2023 Secure Boot certificates and offers a one-click manual force-update.
+- **Partition Style Check:** Identifies **MBR** vs **GPT** to prevent boot-loops after flashing.
+- **Security Audit:** Real-time status for **TPM 2.0**, **Secure Boot**, and **BitLocker** encryption.
+- **Power & Update Guard:** Verifies AC power connectivity and checks for pending Windows Updates.
 
 ---
 
 ## 📥 How to Run (Direct Copy & Paste)
-We have transitioned to a **Direct Execution** method to bypass "file blocked" errors and SmartScreen warnings. No download is required.
+To bypass Windows "File Blocked" errors and SmartScreen warnings, we recommend running the utility directly via PowerShell.
 
 1. **Open PowerShell as Admin:** Right-click the **Start Button** and select **Terminal (Admin)** or **PowerShell (Admin)**.
-2. **Copy the Command:** Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.SecurityProtocolType]::Tls12; irm "https://pastebin.com/raw/2XkDXrfP" | iex
-3. **Paste and Run:** Right-click in the PowerShell window to paste the command, then press **Enter**.
-4. **View Results:** The utility will pull the latest version from Pastebin and display your system audit instantly.
-5. **Save Report:** Follow the on-screen prompt to save a copy of the results to your Desktop for future reference.
+2. **Copy the Command:** Highlight and copy the entire code block below:
 
----
+Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.SecurityProtocolType]::Tls12; irm "https://pastebin.com/raw/2XkDXrfP" | iex
 
-## 🛠️ Internal Debugging
-Version 4.5.8.5 now includes a **Detection Method** field under the Motherboard section. This informs you if the data was pulled via **CIM (Modern)**, **WMI (Legacy)**, or the new **Regex Scraper**, ensuring you know exactly how the script is interacting with your firmware.
+Paste and Run: Right-click in the PowerShell window to paste, then press Enter.
 
----
+View Results: The utility will fetch the latest v4.5.8.7 logic and display your audit instantly.
 
-## 🛑 Usage Restrictions
-This tool is **FREE** for the community. If you paid for this software, you have been scammed. 
-**Commercial redistribution or resale of this utility is strictly prohibited.**
+Save Report: Follow the on-screen prompt to save a copy of the results to your Desktop for future reference.
 
----
+🛠️ Important: UEFI CA 2023 Fix
+If the utility offers to force-deploy the 2023 Certificates:
 
-## ⚠️ Disclaimer & Terms of Use
-**Do not entirely rely on this information. Always perform your own due diligence.** Mike's Unboxing and Community are here to help, but any BIOS updates are performed at **YOUR OWN RISK**. We are in no way responsible for any issues, "bricks," or data loss that may occur during the process.
+Two (2) Restarts are Required: You must restart your computer twice for the update to register in the firmware and for the utility to show a "Green" status.
 
----
+Why? The first restart applies the variables; the second allows the Windows Servicing Stack to verify the change.
 
----
+🛑 Usage Restrictions
+This tool is FREE for the community. If you paid for this software, you have been scammed.
+Commercial redistribution or resale of this utility is strictly prohibited.
+
+⚠️ Disclaimer & Terms of Use
+Do not entirely rely on this information. Always perform your own due diligence. Mike's Unboxing and Community are here to help, but any BIOS updates are performed at YOUR OWN RISK. We are in no way responsible for any hardware failure, "bricks," or data loss.
+
+Would you like me to create a dedicated "Troubleshooting" section for common PowerShell paste errors to add to the bottom of the page?
