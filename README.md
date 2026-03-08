@@ -1,52 +1,57 @@
 <p align="center">
-  <img src="logo.ico" width="150" title="Mike's Unboxing Logo">
+  <img src="logo.ico" alt="Mike's Unboxing Logo" width="200">
 </p>
 
-# Mike's Unboxing Pre-BIOS Check Utility v4.5.8.7
+<p align="center">
+  <img src="https://img.shields.io/badge/version-4.6.1.3-00f2ff" alt="Version 4.6.1.3">
+  <img src="https://img.shields.io/badge/license-Non--Commercial-orange" alt="Non-Commercial License">
+  <img src="https://img.shields.io/badge/platform-Windows-0078d4" alt="Platform Windows">
+</p>
+
+# Mike's Unboxing Pre-BIOS Check Utility
+
 **Comprehensive hardware audit and UEFI safety tool for BIOS updates.**
 
-[![Version](https://img.shields.io/badge/version-4.5.8.7-cyan)](https://github.com/YourUsername/PreBIOSCheck/releases)
-[![License](https://img.shields.io/badge/license-Non--Commercial-orange)](#-disclaimer--terms-of-use)
-[![Platform](https://img.shields.io/badge/platform-Windows-blue)](https://github.com/YourUsername/PreBIOSCheck)
+This specialized PowerShell diagnostic tool verifies system readiness before performing a BIOS/UEFI firmware update. It automates the process of checking hardware age, security states, and power requirements to prevent "bricked" motherboards or BitLocker recovery loops.
+
+| Feature | Logic / Threshold |
+| :--- | :--- |
+| **BIOS Age** | Green (<6m), Yellow (6-12m), Red (>12m) |
+| **OEM Links** | Dynamic Serial/Service Tag lookup (Dell, HP, Lenovo, Acer, etc.) |
+| **Security** | UEFI CA 2023 Signature Database (db) Probe |
+| **Safety** | BitLocker Status, AC/DC Power, GPT/MBR, Pending Updates |
+
+## 🎯 What This Tool Does
+This utility performs a deep-scan of the local WMI and CIM namespaces to provide a "Go/No-Go" status for firmware maintenance. 
+
+### 1. Precision BIOS Date Engine
+The tool solves common "broken date" or "Check BIOS" errors found in standard scripts. It parses both native `DateTime` objects and manual 8-digit strings to calculate a precise age in months.
+
+### 2. Universal OEM Support Engine
+The script dynamically builds support URLs. For brands like Dell, HP, Lenovo, and Acer, it prioritizes the **System Serial Number** or **Service Tag** to land you on the exact "as-configured" support page.
+
+### 3. UEFI CA 2023 Security Probe
+A critical check for Windows 11 systems, probing the `Allowed Signature Database (db)` for the latest Microsoft certificates to prevent Secure Boot violations after a flash.
 
 ---
 
-## 🚀 Key Features
-- **Universal BIOS Date Fix:** Intelligent scraping engine for **Z890**, **X870**, and **Core Ultra** platforms.
-- **OEM String Recovery:** Fixed truncation issues on **Dell** and other OEM systems (e.g., "2024" no longer appears as "202").
-- **UEFI CA 2023 Remediation:** **[NEW]** Detects if Windows is blocking the new 2023 Secure Boot certificates and offers a one-click manual force-update.
-- **Partition Style Check:** Identifies **MBR** vs **GPT** to prevent boot-loops after flashing.
-- **Security Audit:** Real-time status for **TPM 2.0**, **Secure Boot**, and **BitLocker** encryption.
-- **Power & Update Guard:** Verifies AC power connectivity and checks for pending Windows Updates.
+## 🚀 How To Run
+To ensure the tool can access Secure Boot variables and BitLocker status, follow these steps:
+
+1. **Open PowerShell as Administrator** (Right-click the Start button > Terminal/PowerShell Admin).
+2. **Copy and Paste** the following command block into the window and press **Enter**:
+
+```Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.SecurityProtocolType]::Tls12; irm "https://pastebin.com/raw/2XkDXrfP" | iex```
 
 ---
 
-## 📥 How to Run (Direct Copy & Paste)
-To bypass Windows "File Blocked" errors and SmartScreen warnings, we recommend running the utility directly via PowerShell.
+## 📂 Interactive Actions & Reporting
+Upon completion, the tool offers context-aware actions based on your system's live telemetry:
 
-1. **Open PowerShell as Admin:** Right-click the **Start Button** and select **Terminal (Admin)** or **PowerShell (Admin)**.
-2. **Copy the Command:** Highlight and copy the entire code block below:
-
-Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.SecurityProtocolType]::Tls12; irm "https://pastebin.com/raw/2XkDXrfP" | iex
-
-Paste and Run: Right-click in the PowerShell window to paste, then press Enter.
-
-View Results: The utility will fetch the latest v4.5.8.7 logic and display your audit instantly.
-
-Save Report: Follow the on-screen prompt to save a copy of the results to your Desktop for future reference.
-
-🛠️ Important: UEFI CA 2023 Fix
-If the utility offers to force-deploy the 2023 Certificates:
-
-Two (2) Restarts are Required: You must restart your computer twice for the update to register in the firmware and for the utility to show a "Green" status.
-
-Why? The first restart applies the variables; the second allows the Windows Servicing Stack to verify the change.
-
-🛑 Usage Restrictions
-This tool is FREE for the community. If you paid for this software, you have been scammed.
-Commercial redistribution or resale of this utility is strictly prohibited.
-
-⚠️ Disclaimer & Terms of Use
-Do not entirely rely on this information. Always perform your own due diligence. Mike's Unboxing and Community are here to help, but any BIOS updates are performed at YOUR OWN RISK. We are in no way responsible for any hardware failure, "bricks," or data loss.
-
-Would you like me to create a dedicated "Troubleshooting" section for common PowerShell paste errors to add to the bottom of the page?
+* **BitLocker Suspension:** If encryption is active, the tool offers to **Suspend BitLocker** for one reboot cycle to prevent recovery key lockouts.
+* **Certificate Force Update:** Option to **Force Windows to the new UEFI CA 2023 certificate** if the system is out of sync.
+* **OEM Support Access:** Automatically opens your browser to the **manufacturer's support site** for your specific serial number.
+* **Desktop Report:** Saves the full telemetry and analysis as a **.txt file on your Desktop**. 
+    
+---
+**Disclaimer:** Licensed for personal & non-profit use only. (c) 2026 Mike's Unboxing.
